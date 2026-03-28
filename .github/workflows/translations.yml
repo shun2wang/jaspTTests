@@ -10,12 +10,12 @@ jobs:
   generate-translations:
     runs-on: ubuntu-latest
     env:
-      REPO_KEY: ${{ secrets.REPOS_KEY }}
+      REPO_KEY: ${{ secrets.github.token }}
       WEBLATE_KEY: ${{ secrets.WEBLATE_KEY }}
       QML_REPO: jaspttests-qml
       R_REPO: jaspttests-r
 
     steps:
-      - uses: jasp-stats/jasp-actions/wlcLock@master
+      # - uses: jasp-stats/jasp-actions/wlcLock@master
 
-      - uses: jasp-stats/jasp-actions/translations@master
+      - uses: shun2wang/jasp-actions/translations@qt64
